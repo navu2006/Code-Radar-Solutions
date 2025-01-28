@@ -6,7 +6,7 @@ int main() {
     scanf("%d", &b);  // Read value for 'b'
 
     // Check if either 'a' is non-zero or 'b' is greater than 0
-    if (a || b > 0) {
+    if (a > 0|| b > 0) {
         printf("True\n");
     } else {
         printf("False\n");
