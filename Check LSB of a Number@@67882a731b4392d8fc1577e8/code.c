@@ -9,10 +9,10 @@ int main() {
     // Check if the least significant bit is set
     if (num & 1) {
         // LSB is set (1)
-        printf("1\n");
+        printf("Set\n");
     } else {
         // LSB is not set (0)
-        printf("0\n");
+        printf("Not Set\n");
     }
 
     return 0;
