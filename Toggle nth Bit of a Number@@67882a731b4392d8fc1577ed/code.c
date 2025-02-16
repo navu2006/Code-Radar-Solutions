@@ -7,14 +7,14 @@ int main() {
     // Ask the user to input a number
     scanf("%u", &num);
     
-    // Ask the user for the bit position to clear
+    // Ask the user for the bit position to toggle
     scanf("%d", &n);
     
-    // Clear the nth bit by directly modifying the number
-    num = num & ^(1 << n); // Shift 1 to the nth bit, invert, and use AND to clear
+    // Toggle the nth bit using XOR
+    num = num ^ (1 << n);  // Shift 1 to the nth bit and XOR with the number to flip the nth bit
     
     // Output the result
-    printf("%u\n",n, num);  // Print the result after clearing the nth bit
+    printf("%u\n", n, num);
     
     return 0;
 }
