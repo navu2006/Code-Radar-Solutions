@@ -14,7 +14,7 @@ int main() {
     num = num & ~(1 << n); // Shift 1 to the nth bit, invert, and use AND to clear
     
     // Output the result
-    printf("%u\n", n, num);
+    printf("%u\n", num);
     
     return 0;
 }
