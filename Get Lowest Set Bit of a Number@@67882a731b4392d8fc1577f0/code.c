@@ -17,7 +17,6 @@ int main() {
     unsigned int num;
 
     // Ask the user to input a number
-    printf("Enter a number: ");
     scanf("%u", &num);
 
     // Find the position of the lowest set bit
@@ -26,7 +25,7 @@ int main() {
     if (position == -1) {
         printf("No set bits found in the number.\n");
     } else {
-        printf("The position of the lowest set bit is: %d\n", position);
+        printf("%d\n", position);
     }
 
     return 0;
