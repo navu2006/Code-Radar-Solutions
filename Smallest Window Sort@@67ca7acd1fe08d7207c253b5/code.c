@@ -1,31 +1,39 @@
 #include <stdio.h>
 
+// Function to implement bubble sort
+void bubbleSort(int arr[], int n) {
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                // Swap arr[j] and arr[j+1]
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+}
+
+// Function to print the array
+void printArray(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
 int main() {
     int n;
     scanf("%d", &n);  // Read the number of elements
     int arr[n];
     
-    // Read the array elements
+    // Read the elements of the array
     for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
     
-    // Sorting the array using a simple manual approach (Selection sort logic)
-    for (int i = 0; i < n; i++) {
-        for (int j = i+1; j < n; j++) {
-            if (arr[i] > arr[j]) {
-                // Swap the elements without using a sort method
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
-    }
-    
-    // Print the sorted array
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
+    bubbleSort(arr, n);  // Call the bubbleSort function
+    printArray(arr, n);  // Call the printArray function
     
     return 0;
 }
