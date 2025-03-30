@@ -1,24 +1,20 @@
-#include<stdio.h>
+#include <stdio.h>
+
+int isPrime(int num) {
+    if (num < 2) return 0;
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) return 0;
+    }
+    return 1;
+}
 
 int main() {
-    int n, i = 2, isPrime = 1;  // Assume the number is prime initially
-    scanf("%d", &n);  // Read the number
-    
-    // Edge case: Numbers less than 2 are not prime
-    if (n < 2) {
-        isPrime = 0;
-    } else {
-        // Check divisibility from 2 to sqrt(n) (optimized way)
-        while (i * i <= n) {
-            if (n % i == 0) {
-                isPrime = 0;  // Found a divisor, so not prime
-                break;
-            }
-            i++;
-        }
+    int t;
+    scanf("%d", &t);
+    while (t--) {
+        int num;
+        scanf("%d", &num);
+        printf("%d\n", isPrime(num));
     }
-    
-    // Print the result: 1 for prime, 0 for not prime
-    printf("%d", isPrime);
     return 0;
 }
