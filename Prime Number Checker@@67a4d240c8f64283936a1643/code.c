@@ -1,29 +1,24 @@
 #include<stdio.h>
 
 int main() {
-    int a;
-    int count = 0;
-    scanf("%d", &a);  // Read the number
+    int n, i = 2, isPrime = 1;  // Assume the number is prime initially
+    scanf("%d", &n);  // Read the number
     
-    // Handle case where a is less than 2, as numbers less than 2 are not prime
-    if (a < 2) {
-        printf("0\n");  // Output 0 for non-prime numbers (less than 2)
-        return 0;
-    }
-
-    // Loop through all numbers from 1 to a to count divisors of 'a'
-    for (int i = 1; i <= a; i++) {
-        if (a % i == 0) {
-            count++;
+    // Edge case: Numbers less than 2 are not prime
+    if (n < 2) {
+        isPrime = 0;
+    } else {
+        // Check divisibility from 2 to sqrt(n) (optimized way)
+        while (i * i <= n) {
+            if (n % i == 0) {
+                isPrime = 0;  // Found a divisor, so not prime
+                break;
+            }
+            i++;
         }
     }
-
-    // If the count of divisors is exactly 2, it's a prime number
-    if (count == 2) {
-        printf("1\n");  // Output 1 for prime number
-    } else {
-        printf("0\n");  // Output 0 for non-prime number
-    }
-
+    
+    // Print the result: 1 for prime, 0 for not prime
+    printf("%d", isPrime);
     return 0;
 }
